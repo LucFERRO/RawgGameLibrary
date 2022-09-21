@@ -22,6 +22,20 @@ export default function CategoryList({setClicked,setSelectedGenreId}) {
         // apiService.get('platforms').then(response => {setApiPlatformData(response.data)});
     }, [])
 
+    const stylingEmptySpace = {
+        width: '280px',
+        height: '150px'
+    }
+
+
+    //A upgrade
+    const fillEmptySpaces = () => {
+        let genreNumber = apiGenreData.results?.length
+        let res = genreNumber%5
+        console.log(res)
+        return <div style={stylingEmptySpace}></div>
+    }
+
     const handleRessourceClick = (e) => {
         e.preventDefault()
         setClicked(true)
@@ -33,6 +47,8 @@ export default function CategoryList({setClicked,setSelectedGenreId}) {
         // console.log(selectedFilter)
     }
 
+    console.log(apiGenreData)
+    fillEmptySpaces();
 
   return {
         apiGenreData,
@@ -46,6 +62,7 @@ export default function CategoryList({setClicked,setSelectedGenreId}) {
                         <Category category={item.name} img={item.image_background} />
                     </div>
                 ))}
+                {fillEmptySpaces()}
             </div>
         </>
         ),

@@ -13,11 +13,11 @@ export default function Home() {
     const [selectedGenreId, setSelectedGenreId] = useState()
     const [selectedGameId, setSelectedGameId] = useState()
 
-    const goBack = () => {
+    const goToHome = () => {
         setClicked(false)
         setGameClicked(false)
     }
-    const Test = () => {
+    const goToGenres = () => {
         setGameClicked(false)
     }
 
@@ -26,10 +26,10 @@ export default function Home() {
 
   return (
     <>
-        <div className='canvas nique'></div>
-        <button onClick={goBack}>Home</button>
-        <button onClick={Test}>Genres</button>
-        <h1 className='homeH1'>Descente produit basique avec rawg.io</h1>
+        <div className='canvas'></div>
+        <button onClick={goToHome}>Home</button>
+        { !(clicked&&gameClicked) ? '' : <button onClick={goToGenres}>Genres</button> }
+        <h1 className='homeH1'>Rawg.io</h1>
         {/* <button onClick={()=>filter[0]='platforms'}>Platform</button>
         <button onClick={()=>filter[0]='genres'}>Genre</button> */}
 
