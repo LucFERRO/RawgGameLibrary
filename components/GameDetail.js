@@ -41,7 +41,7 @@ export default function GameDetail({selectedGameId, setSelectedGameId}) {
     //         return result
     //     })
     // }
-    console.log(gameDetails)
+    // console.log(gameDetails)
 
     let fullStar = '★'
     let emptyStar = '☆'
