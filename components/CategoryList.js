@@ -32,7 +32,7 @@ export default function CategoryList({setClicked,setSelectedGenreId}) {
     const fillEmptySpaces = () => {
         let genreNumber = apiGenreData.results?.length
         let res = genreNumber%5
-        console.log(res)
+        
         return <div style={stylingEmptySpace}></div>
     }
 
@@ -46,9 +46,6 @@ export default function CategoryList({setClicked,setSelectedGenreId}) {
         setSelectedGenreId(clickedRessourceId)
         // console.log(selectedFilter)
     }
-
-    console.log(apiGenreData)
-    fillEmptySpaces();
 
   return {
         apiGenreData,
