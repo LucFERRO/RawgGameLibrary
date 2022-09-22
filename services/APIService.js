@@ -3,7 +3,7 @@
 import axios from 'axios'
 
 const url = 'https://api.rawg.io/api'
-const rawgApiKey = '' 
+let rawgApiKey = '' 
 
 if (!process.env.NEXT_PUBLIC_API_KEY) {
     rawgApiKey = '39e9827367fa4218a54bd1d841498726'
