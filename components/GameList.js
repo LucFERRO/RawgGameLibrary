@@ -23,7 +23,7 @@ export default function GameList({selectedFilter, selectedGenreId, setGameClicke
     //     setPageNumber(number)
     // }
 
-    console.log(apiGameData)
+    // console.log(apiGameData)
 
 //   return (
 //     <>

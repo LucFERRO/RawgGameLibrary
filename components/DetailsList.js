@@ -4,9 +4,9 @@ import { useState } from 'react'
 export default function DetailsList({array, item1, item2}) {
     const [gameDetails, setGameDetails] = useState([])
     setGameDetails(array.Reflect.get(array,item1))
-    console.log(gameDetails)
-    console.log(Reflect.get(array,item1))
-    console.log(Reflect.get(Reflect.get(array,item1)[0],item2))
+    // console.log(gameDetails)
+    // console.log(Reflect.get(array,item1))
+    // console.log(Reflect.get(Reflect.get(array,item1)[0],item2))
     let itemKey = Reflect.get(array,item1)
   return (
     <>
