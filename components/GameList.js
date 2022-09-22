@@ -6,7 +6,7 @@ import Game from './Game'
 export default function GameList({selectedFilter, selectedGenreId, setGameClicked, setSelectedGameId}) {
 
     const [apiGameData, setApiGameData] = useState({})
-    const [pageNumber, setPageNumber] = useState(2)
+    const [pageNumber, setPageNumber] = useState()
 
     useEffect(() => {
         apiService.getGames(selectedGenreId,pageNumber).then(response => {setApiGameData(response.data)})

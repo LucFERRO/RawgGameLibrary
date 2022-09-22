@@ -3,17 +3,24 @@
 import axios from 'axios'
 
 const url = 'https://api.rawg.io/api'
+const rawgApiKey = '' 
+
+if (!process.env.NEXT_PUBLIC_API_KEY) {
+    rawgApiKey = '39e9827367fa4218a54bd1d841498726'
+} else {
+    rawgApiKey = process.env.NEXT_PUBLIC_API_KEY
+}
 
 const apiService = {
     get(filter) {
-        return axios.get(`${url}/${filter}?key=${process.env.NEXT_PUBLIC_API_KEY}`)
+        return axios.get(`${url}/${filter}?key=${rawgApiKey}`)
     },
     getGames(genreId, pageNumber = '') {
         let pagination = pageNumber !== '' ? `&page=${pageNumber}` : ''
-        return axios.get(`${url}/games?key=${process.env.NEXT_PUBLIC_API_KEY}&genres=${genreId}${pagination}`)
+        return axios.get(`${url}/games?key=${rawgApiKey}&genres=${genreId}${pagination}`)
     },
     getGameDetails(gameId) {
-        return axios.get(`${url}/games/${gameId}?key=${process.env.NEXT_PUBLIC_API_KEY}`)
+        return axios.get(`${url}/games/${gameId}?key=${rawgApiKey}`)
     }
 }
 
